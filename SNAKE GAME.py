@@ -17,6 +17,18 @@ direction = 'down'
 
 #Food Class
 
+class Food:
+
+    def __init__(self, canvas):
+
+        x = random.randint(0, int(GAME_WIDTH / SPACE_SIZE)-1) * SPACE_SIZE
+        y = random.randint(0, int(GAME_HEIGHT / SPACE_SIZE) - 1) * SPACE_SIZE
+
+        self.coordinates = [x, y]
+        self.canvas = canvas
+
+        self.canvas.create_oval(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=FOOD_COLOR, tag="food")
+
 #Game Logic Functions
 
 #User Input Handling
